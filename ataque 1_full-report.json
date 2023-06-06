@@ -1,0 +1,367 @@
+{
+  "name": "ataque 1",
+  "host_group": [
+    {
+      "exe_name": "splunkd.exe",
+      "trusted": true,
+      "contact": "HTTP",
+      "proxy_receivers": {},
+      "upstream_dest": "http://192.168.0.10:8888",
+      "origin_link_id": "",
+      "available_contacts": [
+        "HTTP"
+      ],
+      "display_name": "DESKTOP-P9C9R7U$DESKTOP-P9C9R7U\\cleit",
+      "deadman_enabled": true,
+      "host_ip_addrs": [
+        "192.168.0.8"
+      ],
+      "created": "2023-05-30T00:41:22Z",
+      "username": "DESKTOP-P9C9R7U\\cleit",
+      "server": "http://192.168.0.10:8888",
+      "platform": "windows",
+      "sleep_max": 60,
+      "location": "C:\\Users\\Public\\splunkd.exe",
+      "group": "red",
+      "last_seen": "2023-05-30T00:48:38Z",
+      "pid": 6324,
+      "proxy_chain": [],
+      "ppid": 5232,
+      "links": [
+        {
+          "relationships": [],
+          "plaintext_command": "Q2xlYXItSGlzdG9yeTtDbGVhcg==",
+          "ability": {
+            "technique_id": "T1070.003",
+            "description": "Stop terminal from logging history",
+            "executors": [
+              {
+                "payloads": [],
+                "timeout": 60,
+                "variations": [],
+                "code": null,
+                "cleanup": [],
+                "platform": "darwin",
+                "uploads": [],
+                "language": null,
+                "additional_info": {},
+                "build_target": null,
+                "command": "> $HOME/.bash_history && unset HISTFILE",
+                "name": "sh",
+                "parsers": []
+              },
+              {
+                "payloads": [],
+                "timeout": 60,
+                "variations": [],
+                "code": null,
+                "cleanup": [],
+                "platform": "linux",
+                "uploads": [],
+                "language": null,
+                "additional_info": {},
+                "build_target": null,
+                "command": "> $HOME/.bash_history && unset HISTFILE",
+                "name": "sh",
+                "parsers": []
+              },
+              {
+                "payloads": [],
+                "timeout": 60,
+                "variations": [],
+                "code": null,
+                "cleanup": [],
+                "platform": "windows",
+                "uploads": [],
+                "language": null,
+                "additional_info": {},
+                "build_target": null,
+                "command": "Clear-History;Clear",
+                "name": "psh",
+                "parsers": []
+              }
+            ],
+            "access": {},
+            "privilege": null,
+            "requirements": [],
+            "delete_payload": true,
+            "buckets": [
+              "defense-evasion"
+            ],
+            "singleton": false,
+            "additional_info": {},
+            "plugin": "stockpile",
+            "repeatable": false,
+            "name": "Avoid logs",
+            "ability_id": "43b3754c-def4-4699-a673-1d85648fda6a",
+            "tactic": "defense-evasion",
+            "technique_name": "Indicator Removal on Host: Clear Command History"
+          },
+          "executor": {
+            "payloads": [],
+            "timeout": 60,
+            "variations": [],
+            "code": null,
+            "cleanup": [],
+            "platform": "windows",
+            "uploads": [],
+            "language": null,
+            "additional_info": {},
+            "build_target": null,
+            "command": "Clear-History;Clear",
+            "name": "psh",
+            "parsers": []
+          },
+          "pin": 0,
+          "finish": "2023-05-30T00:41:27Z",
+          "collect": "2023-05-30T00:41:22Z",
+          "id": "efa34f49-26d6-4c37-b7c3-559708187549",
+          "score": 0,
+          "used": [],
+          "agent_reported_time": "2023-05-30T00:41:21Z",
+          "status": 0,
+          "cleanup": 0,
+          "deadman": false,
+          "jitter": 0,
+          "unique": "efa34f49-26d6-4c37-b7c3-559708187549",
+          "pid": "4244",
+          "facts": [],
+          "decide": "2023-05-30T00:41:22Z",
+          "output": "False",
+          "paw": "arguwa",
+          "host": "DESKTOP-P9C9R7U",
+          "command": "Q2xlYXItSGlzdG9yeTtDbGVhcg==",
+          "visibility": {
+            "adjustments": [],
+            "score": 50
+          }
+        }
+      ],
+      "executors": [
+        "cmd",
+        "psh",
+        "proc"
+      ],
+      "sleep_min": 30,
+      "privilege": "User",
+      "architecture": "amd64",
+      "paw": "arguwa",
+      "watchdog": 0,
+      "host": "DESKTOP-P9C9R7U",
+      "pending_contact": "HTTP"
+    }
+  ],
+  "start": "2023-05-30T00:43:32Z",
+  "steps": {
+    "arguwa": {
+      "steps": [
+        {
+          "link_id": "86dbe326-9aa1-4466-be6d-c24e79e283bc",
+          "ability_id": "bd527b63-9f9e-46e0-9816-b8434d2b8989",
+          "command": "whoami",
+          "plaintext_command": "whoami",
+          "delegated": "2023-05-30T00:43:32Z",
+          "run": "2023-05-30T00:44:09Z",
+          "status": 0,
+          "platform": "windows",
+          "executor": "psh",
+          "pid": 6428,
+          "description": "Obtain user from current session",
+          "name": "Current User",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "System Owner/User Discovery",
+            "technique_id": "T1033"
+          },
+          "output": {
+            "stdout": "desktop-p9c9r7u\\cleit",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-05-30T00:44:03Z"
+        },
+        {
+          "link_id": "bde75cbe-d9e9-4604-8694-12e77d1321c1",
+          "ability_id": "6e1a53c0-7352-4899-be35-fa7f364d5722",
+          "command": "pwd",
+          "plaintext_command": "pwd",
+          "delegated": "2023-05-30T00:44:12Z",
+          "run": "2023-05-30T00:44:47Z",
+          "status": 0,
+          "platform": "windows",
+          "executor": "psh",
+          "pid": 6708,
+          "description": "Print the current working directory on the system",
+          "name": "Print Working Directory",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "File and Directory Discovery",
+            "technique_id": "T1083"
+          },
+          "output": {
+            "stdout": "Path          ----          C:\\Users\\cleit",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-05-30T00:44:42Z"
+        },
+        {
+          "link_id": "17aec153-b8af-4f4f-87a2-366b9b8d3a38",
+          "ability_id": "52177cc1-b9ab-4411-ac21-2eadc4b5d3b8",
+          "command": "dir",
+          "plaintext_command": "dir",
+          "delegated": "2023-05-30T00:44:52Z",
+          "run": "2023-05-30T00:45:25Z",
+          "status": 0,
+          "platform": "windows",
+          "executor": "psh",
+          "pid": 6044,
+          "description": "List contents of current directory",
+          "name": "List Directory",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "File and Directory Discovery",
+            "technique_id": "T1083"
+          },
+          "output": {
+            "stdout": "    Diretrio: C:\\Users\\cleitMode                 LastWriteTime         Length Name                                                                 ----                 -------------         ------ ----                                                                 d-r---        28/05/2023     18:17                3D Objects                                                           d-r---        28/05/2023     18:17                Contacts                                                             d-----        28/05/2023     19:02                Documents                                                            d-r---        28/05/2023     18:17                Downloads                                                            d-r---        28/05/2023     18:17                Favorites                                                            d-r---        28/05/2023     18:17                Links                                                                d-r---        28/05/2023     18:17                Music                                                                dar--l        29/05/2023     21:38                OneDrive                                                             d-r---        28/05/2023     18:17                Saved Games                                                          d-r---        28/05/2023     18:19                Searches                                                             d-r---        28/05/2023     18:17                Videos                                                               ",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-05-30T00:45:20Z"
+        },
+        {
+          "link_id": "3922ca8c-4d98-41f6-821f-3a34e5cebb69",
+          "ability_id": "335cea7b-bec0-48c6-adfb-6066070f5f68",
+          "command": "get-process",
+          "plaintext_command": "get-process",
+          "delegated": "2023-05-30T00:45:27Z",
+          "run": "2023-05-30T00:46:16Z",
+          "status": 0,
+          "platform": "windows",
+          "executor": "psh",
+          "pid": 4340,
+          "description": "Display information about current system processes",
+          "name": "View Processes",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "Process Discovery",
+            "technique_id": "T1057"
+          },
+          "output": {
+            "stdout": "Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                                                  -------  ------    -----      -----     ------     --  -- -----------                                                        0       2      448       1272       0,00   6596   1 backgroundTaskHost                                               428      17    19000      27996              4652   0 CompatTelRunner                                                  114       6     1016        976              6348   0 CompatTelRunner                                                  804      26    37776      32592              6396   0 CompatTelRunner                                                  124      10     6500      14612       0,19   1480   1 conhost                                                          155      10     6484       7680              4836   0 conhost                                                          268      13     4072      18396       0,34   5532   1 conhost                                                          155      10     6472       1044              6560   0 conhost                                                          409      16     1680       3800               408   0 csrss                                                            394      17     1776       4276               488   1 csrss                                                            413      16     3836      18816       0,33   3224   1 ctfmon                                                           356      17     3468       7352              3016   0 dasHost                                                          219      17     3428      12104       0,47   5372   1 dllhost                                                          918      37    28164      34464               892   1 dwm                                                             1976      76    35872      60940       9,73   3308   1 explorer                                                          36       6     1476       2572               680   1 fontdrvhost                                                       36       5     1280       1884               688   0 fontdrvhost                                                        0       0       60          8                 0   0 Idle                                                            1260      26     7080      17224               608   0 lsass                                                              0       0      728      56788              1300   0 Memory Compression                                               473      24     8940      16412       0,47   4436   1 Microsoft.SharePoint                                             454      21    26840      18504              4412   0 MoUsoCoreWorker                                                   60       5     3024       3452              7004   0 mpam-ee9f21cc                                                    168       9     2260       6936              2596   0 MpCmdRun                                                         402      14     3576      11996              5872   0 MpCmdRun                                                         119       8     1944       6640              6876   0 MpSigStub                                                        351      28    14112      28908       2,89    260   1 msedge                                                           315      18    15776      32984      33,56    920   1 msedge                                                           293      16    16852      18004       0,34   2636   1 msedge                                                           271      16    15380      44884       0,72   4324   1 msedge                                                           449      31   212492     244480      75,73   5016   1 msedge                                                           218      14     7848      13336       0,48   5220   1 msedge                                                           247      16     7964      11920       0,17   5764   1 msedge                                                          1547      56    84492      98880      27,39   5784   1 msedge                                                           172       9     2060       7124       0,16   5888   1 msedge                                                           315      18    29068      58000       2,19   6416   1 msedge                                                           887     152   522656     210804              1464   0 MsMpEng                                                          183      11     4672       7160              2812   0 NisSrv                                                           818      50   119552     140780      25,67   7104   1 OneDrive                                                         516      33    50864      57152       1,77   4340   1 powershell                                                       689      47    72144      93100       7,20   5232   1 powershell                                                         0       8     3480      27720                72   0 Registry                                                         450      23     8940      34716       1,19   1252   1 RuntimeBroker                                                    371      20     7716      28892       2,58   4356   1 RuntimeBroker                                                    536      25    10336      29244       1,86   5068   1 RuntimeBroker                                                    278      14     3512      21336       0,95   5300   1 RuntimeBroker                                                    215      11     2604      16204       0,09   5940   1 RuntimeBroker                                                   1264     103   128548      63688       5,66   4564   1 SearchApp                                                        145       8     1548       7392              2960   0 SearchFilterHost                                                 728      71    27956      34636              4536   0 SearchIndexer                                                    372      14     3904       9496              5948   0 SearchProtocolHost                                               379      15     3204      10152              5792   0 SecurityHealthService                                            160       9     1680       8892       0,08   5724   1 SecurityHealthSystray                                            379      11     4136       7692               572   0 services                                                         105       7     2864       6040              6976   0 SgrmBroker                                                       656      19     5800      15840       1,80   2936   1 sihost                                                           696      36    12640      14288       2,23   4844   1 SkypeApp                                                         147       8     2004       2712       0,16   3484   1 SkypeBackgroundHost                                               53       3     1060        528               308   0 smss                                                             132      11    17776       9924       1,75   6324   1 splunkd                                                          429      20     5020      11736              1668   0 spoolsv                                                          228      10     3176      11840              5880   0 sppsvc                                                           739      34    22784      63604       2,64   3564   1 StartMenuExperienceHost                                          805      23    20748      24544               108   0 svchost                                                          495      26    12120      13336               272   0 svchost                                                         1286      26     9412      25036               708   0 svchost                                                          984      18     5948      11928               800   0 svchost                                                         2424     125    97176     102692               976   0 svchost                                                          697      27    49432      51824              1012   0 svchost                                                          912      44    11484      12080              1028   0 svchost                                                          526      25    17744      25944              1140   0 svchost                                                          887      36     9016      18116              1144   0 svchost                                                          229      12     2332      10180              1364   0 svchost                                                          294      12     2604       9552              1392   0 svchost                                                          135       9     1652       4144              1512   0 svchost                                                          355      12     2356       5952              1524   0 svchost                                                          236      14     6252      16928              1552   0 svchost                                                          343      14     3484       9056              1564   0 svchost                                                          393      31    10936       9912              1748   0 svchost                                                          379      21     3452       7096              1820   0 svchost                                                         1300      15     8008      18172              2268   0 svchost                                                          257      18    13880      20356              2376   0 svchost                                                          195      11     1932       6024              2524   0 svchost                                                          694      28    10888      18976       1,59   2620   1 svchost                                                          228      13     2944      12072              2684   0 svchost                                                          236      16     3888      14032              3104   0 svchost                                                          338      19     5384       9352              3724   0 svchost                                                          288      14     3528      19832       0,33   3812   1 svchost                                                          182       8     1756       7344              5556   0 svchost                                                         2388       0      196        136                 4   0 System                                                           258      29     6180      14412       1,30   3080   1 taskhostw                                                        533      25     6296      24728              6776   0 taskhostw                                                        546      22     8896      10432       1,30   4140   1 TextInputHost                                                    171      11     2392       9612              3468   0 TiWorker                                                         134       8     1828       7516              2808   0 TrustedInstaller                                                 164      11     1344       4688               480   0 wininit                                                          266      12     2468       8344               548   1 winlogon                                                         192      11     2672       7956              5536   0 WmiPrvSE                                                         286      14     5888      15480              6420   0 WmiPrvSE                                                     ",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-05-30T00:46:08Z"
+        },
+        {
+          "link_id": "e4c5f757-5d93-42ee-9149-0b2dfa27bada",
+          "ability_id": "e8017c46-acb8-400c-a4b5-b3362b5b5baa",
+          "command": "ipconfig",
+          "plaintext_command": "ipconfig",
+          "delegated": "2023-05-30T00:46:17Z",
+          "run": "2023-05-30T00:47:15Z",
+          "status": 0,
+          "platform": "windows",
+          "executor": "psh",
+          "pid": 6496,
+          "description": "View network configuration info for host",
+          "name": "Network Interface Configuration",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "System Network Configuration Discovery",
+            "technique_id": "T1016"
+          },
+          "output": {
+            "stdout": "Configurao de IP do WindowsAdaptador Ethernet Ethernet:   Sufixo DNS especfico de conexo. . . . . . :    Endereo IPv6 . . . . . . . . . . : 2804:29b8:51ba:2aa:52a5:3853:26b4:e0ea   Endereo IPv6 Temporrio. . . . . . . . : 2804:29b8:51ba:2aa:1d3d:9ab5:a36f:6d1b   Endereo IPv6 de link local . . . . . . . . : fe80::5d8e:23a2:bb23:451d%3   Endereo IPv4. . . . . . . .  . . . . . . . : 192.168.0.8   Mscara de Sub-rede . . . . . . . . . . . . : 255.255.255.0   Gateway Padro. . . . . . . . . . . . . . . : fe80::3660:f9ff:fe86:6990%3                                                 192.168.0.1",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-05-30T00:47:10Z"
+        },
+        {
+          "link_id": "d04f3598-dca5-450f-a022-93f5e441d671",
+          "ability_id": "b18e8767-b7ea-41a3-8e80-baf65a5ddef5",
+          "command": "python3 --version&python2 --version&python --version",
+          "plaintext_command": "python3 --version&python2 --version&python --version",
+          "delegated": "2023-05-30T00:47:17Z",
+          "run": "2023-05-30T00:48:08Z",
+          "status": 1,
+          "platform": "windows",
+          "executor": "cmd",
+          "pid": 4716,
+          "description": "Check to see what version of python is installed",
+          "name": "Check Python",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "Software Discovery",
+            "technique_id": "T1518"
+          },
+          "output": {
+            "stdout": "Python was not found but can be installed from the Microsoft Store: ms-windows-store://pdp/?productid=9NJ46SX7X90P'python2' no  reconhecido como um comando internoou externo, um programa opervel ou um arquivo em lotes.Python was not found but can be installed from the Microsoft Store: ms-windows-store://pdp/?productid=9NJ46SX7X90P",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-05-30T00:47:58Z"
+        }
+      ]
+    }
+  },
+  "finish": null,
+  "planner": "atomic",
+  "adversary": {
+    "description": "Profile to check proper platform configuration. Observe outputs to verify.",
+    "tags": [],
+    "adversary_id": "01d77744-2515-401a-a497-d9f7241aac3c",
+    "name": "Check",
+    "has_repeatable_abilities": false,
+    "atomic_ordering": [
+      "bd527b63-9f9e-46e0-9816-b8434d2b8989",
+      "6e1a53c0-7352-4899-be35-fa7f364d5722",
+      "52177cc1-b9ab-4411-ac21-2eadc4b5d3b8",
+      "335cea7b-bec0-48c6-adfb-6066070f5f68",
+      "e8017c46-acb8-400c-a4b5-b3362b5b5baa",
+      "9849d956-37ea-49f2-a8b5-f2ca080b315d",
+      "830bb6ed-9594-4817-b1a1-c298c0f9f425",
+      "b18e8767-b7ea-41a3-8e80-baf65a5ddef5"
+    ],
+    "plugin": "stockpile",
+    "objective": "495a9828-cab1-44dd-a0ca-66e58177d8cc"
+  },
+  "jitter": "2/8",
+  "objectives": {
+    "description": "This is a default objective that runs forever.",
+    "percentage": 0,
+    "id": "495a9828-cab1-44dd-a0ca-66e58177d8cc",
+    "name": "default",
+    "goals": [
+      {
+        "operator": "==",
+        "achieved": false,
+        "count": 1048576,
+        "target": "exhaustion",
+        "value": "complete"
+      }
+    ]
+  },
+  "facts": [],
+  "skipped_abilities": [
+    {
+      "arguwa": [
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "9849d956-37ea-49f2-a8b5-f2ca080b315d",
+          "ability_name": "Check Go"
+        },
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "830bb6ed-9594-4817-b1a1-c298c0f9f425",
+          "ability_name": "Check Chrome"
+        }
+      ]
+    }
+  ]
+}
